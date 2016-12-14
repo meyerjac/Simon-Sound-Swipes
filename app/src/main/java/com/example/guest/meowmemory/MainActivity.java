@@ -1,6 +1,7 @@
 package com.example.guest.meowmemory;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.guest.meowmemory.ui.RulesActivity;
 import com.example.guest.meowmemory.util.Android_Gesture_Detector;
 
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity implements SensorEventListener, View.OnClickListener {
     private String TAG = MainActivity.class.getSimpleName();
     private Button mNewGame;
+    private Button mRules;
     private ImageView mRedLight;
     private ImageView mGreenLight;
     private MediaPlayer cat;
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         mNewGame = (Button) findViewById(R.id.newGame);
         mGreenLight = (ImageView) findViewById(R.id.green);
         mRedLight = (ImageView) findViewById(R.id.red);
+        mRules = (Button) findViewById(R.id.rules);
 
         cat = MediaPlayer.create(this, R.raw.meow);
         dog = MediaPlayer.create(this, R.raw.bark);
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         context = this;
         mNewGame.setOnClickListener(this);
+        mRules.setOnClickListener(this);
 
         Android_Gesture_Detector custom_gesture_detector = new Android_Gesture_Detector() {
             @Override
@@ -231,6 +236,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (view == mNewGame) {
             Log.d(TAG, "onClick: ");
             startSequence();
+        } if (view == mRules) {
+            Intent intent = new Intent(MainActivity.this, RulesActivity.class);
+            startActivity(intent);
         }
     }
 
