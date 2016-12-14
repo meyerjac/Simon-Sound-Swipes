@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:id="@+id/cat"
         android:src="@drawable/cat"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -22,16 +22,21 @@
         android:src="@drawable/chewy"
         android:layout_alignTop="@+id/shaggy"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/shaggy"
+        android:layout_toRightOf="@+id/cat"
+        android:layout_toEndOf="@+id/cat" />
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/shaggy"
         android:src="@drawable/spongebob"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/dog"
+        android:layout_toLeftOf="@+id/cat"
+        android:layout_toStartOf="@+id/cat" />
 
     <ImageView
         android:layout_width="150dp"
@@ -39,21 +44,71 @@
         android:id="@+id/dog"
         android:src="@drawable/dog"
         android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/cat"
+        android:layout_alignEnd="@+id/cat" />
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        android:id="@+id/newGame"
+        android:layout_weight="1"
+        android:layout_marginRight="3dp"
+        android:background="@color/colorAccent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HighScore"
+        android:id="@+id/highscore"
+        android:layout_weight="1"
+        android:background="@color/colorAccent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rules"
+        android:id="@+id/rules"
+        android:background="@color/colorAccent"
+        android:layout_weight="1"
+        android:layout_marginLeft="3dp"
+       />
+        </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/emptyTrafficLight"
+        android:src="@drawable/stoplight"
+        android:layout_marginBottom="72dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Swipe in the direction of the sound"
-        android:id="@+id/textView"
-        android:textSize="23dp"
-        android:textColor="#030303"
-        android:textStyle="bold"
-        android:layout_alignTop="@+id/wookie"
-        android:layout_alignRight="@+id/cat"
-        android:layout_alignEnd="@+id/cat"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/shaggy"
-        android:layout_toEndOf="@+id/shaggy" />
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/red"
+            android:src="@drawable/red"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/green"
+            android:layout_alignStart="@+id/green"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/green"
+            android:src="@drawable/green"
+            android:layout_marginBottom="57dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
 </RelativeLayout>
