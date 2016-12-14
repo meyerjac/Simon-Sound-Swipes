@@ -28,7 +28,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/shaggy"
-        android:src="@drawable/shaggy"
+        android:src="@drawable/spongebob"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -50,7 +50,10 @@
         android:textSize="23dp"
         android:textColor="#030303"
         android:textStyle="bold"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/cat"
-        android:layout_alignStart="@+id/cat" />
+        android:layout_alignTop="@+id/wookie"
+        android:layout_alignRight="@+id/cat"
+        android:layout_alignEnd="@+id/cat"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/shaggy"
+        android:layout_toEndOf="@+id/shaggy" />
 </RelativeLayout>

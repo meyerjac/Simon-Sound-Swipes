@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private ImageView mCat;
     private ImageView mWookie;
     private ImageView mDog;
-    private ImageView mShaggy;
+    private ImageView mSponge;
     private MediaPlayer cat;
     private MediaPlayer wookie;
     private MediaPlayer dog;
-    private MediaPlayer shaggy;
+    private MediaPlayer sponge;
     private MediaPlayer shake;
     private GestureDetector mGestureDetector;
     private SensorManager mSensorManager;
@@ -56,14 +56,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         mCat = (ImageView) findViewById(R.id.cat);
         mWookie = (ImageView) findViewById(R.id.wookie);
         mDog = (ImageView) findViewById(R.id.dog);
-        mShaggy= (ImageView) findViewById(R.id.shaggy);
+        mSponge= (ImageView) findViewById(R.id.shaggy);
         context = this;
         cat = MediaPlayer.create(this, R.raw.meow);
         dog = MediaPlayer.create(this, R.raw.bark);
-        wookie = MediaPlayer.create(this, R.raw.wookie);
+        wookie = MediaPlayer.create(this, R.raw.chewy);
         cat = MediaPlayer.create(this, R.raw.meow);
         shake = MediaPlayer.create(this, R.raw.shake);
-        shaggy = MediaPlayer.create(this, R.raw.zoinks);
+        sponge = MediaPlayer.create(this, R.raw.sponge);
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onSwipeLeft() {
                 guess = 4;
                 evaluateGuess();
-                shaggy.start();
+                sponge.start();
             }
         };
         mGestureDetector = new GestureDetector(this,custom_gesture_detector);
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }else if(soundId == 3){
             dog.start();
         }else if(soundId == 4){
-            shaggy.start();
+            sponge.start();
         }
     }
 }
